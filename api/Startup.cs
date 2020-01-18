@@ -11,7 +11,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 
-namespace api
+namespace API
 {
     public class Startup
     {
@@ -31,6 +31,7 @@ namespace api
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
+            ConnectionStrings.DefaultConnection = Configuration.GetConnectionString("DefaultConnection");
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
