@@ -13,7 +13,7 @@ build:angular:
     - yarn install
     - yarn run ng build
 
-test:angular:
+test:angular13:
   image: debian:stable
   script:
     - rm /bin/sh && ln -s /bin/bash /bin/sh
@@ -28,6 +28,52 @@ test:angular:
     - apt-get install -y -q --no-install-recommends firefox-esr
     - export NVM_DIR ''
     - curl -sL https://deb.nodesource.com/setup_13.x | bash -
+    - apt-get install -y nodejs
+    - node --version
+    - npm --version
+    - npm install -g yarn
+    - cd web
+    - yarn install
+    - yarn run ng test --no-watch --no-progress --browsers=FirefoxHeadless
+
+test:angular12:
+  image: debian:stable
+  script:
+    - rm /bin/sh && ln -s /bin/bash /bin/sh
+    - time apt-get update
+    - apt-get install -y -q --no-install-recommends apt-transport-https
+    - apt-get install -y -q --no-install-recommends build-essential
+    - apt-get install -y -q --no-install-recommends ca-certificates
+    - apt-get install -y -q --no-install-recommends curl
+    - apt-get install -y -q --no-install-recommends git
+    - apt-get install -y -q --no-install-recommends libssl-dev
+    - apt-get install -y -q --no-install-recommends wget
+    - apt-get install -y -q --no-install-recommends firefox-esr
+    - export NVM_DIR ''
+    - curl -sL https://deb.nodesource.com/setup_12.x | bash -
+    - apt-get install -y nodejs
+    - node --version
+    - npm --version
+    - npm install -g yarn
+    - cd web
+    - yarn install
+    - yarn run ng test --no-watch --no-progress --browsers=FirefoxHeadless
+
+test:angular10:
+  image: debian:stable
+  script:
+    - rm /bin/sh && ln -s /bin/bash /bin/sh
+    - time apt-get update
+    - apt-get install -y -q --no-install-recommends apt-transport-https
+    - apt-get install -y -q --no-install-recommends build-essential
+    - apt-get install -y -q --no-install-recommends ca-certificates
+    - apt-get install -y -q --no-install-recommends curl
+    - apt-get install -y -q --no-install-recommends git
+    - apt-get install -y -q --no-install-recommends libssl-dev
+    - apt-get install -y -q --no-install-recommends wget
+    - apt-get install -y -q --no-install-recommends firefox-esr
+    - export NVM_DIR ''
+    - curl -sL https://deb.nodesource.com/setup_10.x | bash -
     - apt-get install -y nodejs
     - node --version
     - npm --version
