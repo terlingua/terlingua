@@ -12,3 +12,12 @@ build:angular:
     - cd web
     - yarn install
     - yarn run ng build
+
+build:sql:
+  image: mcr.microsoft.com/mssql/server:2019-latest
+  variables:
+    ACCEPT_EULA: Y
+    SA_PASSWORD: 9034725985
+  script:
+    - cd data/terlinguasql
+    - sqlcmd -e "hello, world"
