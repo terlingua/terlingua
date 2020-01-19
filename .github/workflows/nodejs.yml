@@ -19,6 +19,7 @@ jobs:
         node-version: ${{ matrix.node-version }}
     - name: build
       run: |
+        cd web
         yarn install
         yarn run ng build
       env:
