@@ -26,7 +26,7 @@ test:angular:
     - apt-get install -y -q --no-install-recommends libssl-dev
     - apt-get install -y -q --no-install-recommends wget
     - apt-get install -y -q --no-install-recommends firefox-esr
-    - export NVM_DIR /usr/local/nvm
+    - export NVM_DIR '/usr/local/nvm'
     - curl https://raw.githubusercontent.com/creationix/nvm/master/install.sh | bash \
         && . $NVM_DIR/nvm.sh \
         && nvm install node
