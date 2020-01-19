@@ -31,6 +31,7 @@ module.exports = function (config) {
         base: 'Firefox',
         flags: [ '-headless' ],
       },
+    },
     singleRun: false,
     restartOnFileChange: true
   });
