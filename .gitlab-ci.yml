@@ -26,9 +26,9 @@ test:angular:
     - apt-get install -y -q --no-install-recommends libssl-dev
     - apt-get install -y -q --no-install-recommends wget
     - apt-get install -y -q --no-install-recommends firefox-esr
-    - curl https://raw.githubusercontent.com/creationix/nvm/master/install.sh | bash \
-        && . /usr/local/nvm/nvm.sh \
-        && nvm install node
+    - export NVM_DIR ''
+    - curl -sL https://deb.nodesource.com/setup_13.x | bash -
+    - apt-get install -y nodejs
     - node --version
     - npm --version
     - npm install -g yarn
