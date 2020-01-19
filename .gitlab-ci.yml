@@ -12,6 +12,7 @@ build:angular:
     - cd web
     - yarn install
     - yarn run ng build
+    - which firefox
 
 build:sql:
   image: mcr.microsoft.com/mssql/server:2019-latest
