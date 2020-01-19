@@ -1,27 +1,10 @@
-# Web
+Run unit tests in Firefox on Linux desktop
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.23.
-
-## Development server
-
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+$ ng test --no-watch --no-progress --browsers=FirefoxHeadless
+18 01 2020 19:47:35.410:INFO [karma-server]: Karma v4.1.0 server started at http://0.0.0.0:9876/
+18 01 2020 19:47:35.413:INFO [launcher]: Launching browsers FirefoxHeadless with concurrency unlimited
+18 01 2020 19:47:35.437:INFO [launcher]: Starting browser Firefox
+18 01 2020 19:47:43.552:INFO [Firefox 72.0.0 (Fedora 0.0.0)]: Connected on socket 03OjanEfaG1SKCslAAAA with id 41568230
+Firefox 72.0.0 (Fedora 0.0.0): Executed 3 of 3 SUCCESS (0.41 secs / 0.356 secs)
+TOTAL: 3 SUCCESS
+TOTAL: 3 SUCCESS
