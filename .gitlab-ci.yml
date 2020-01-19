@@ -20,26 +20,12 @@ test:angular:
     - apt-get install -yqq firefox-esr curl
     - curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.2/install.sh | bash
     - pwd
-    - export NVM_DIR="$HOME/.nvm"
+    - sh $HOME/.nvm/nvm.sh
     - nvm install node
     - npm install -g yarn
     - cd web
     - yarn install
     - yarn run ng test --no-watch --no-progress --browsers=FirefoxHeadless
-
-test:angularonfedora:
-  image: fedora:latest
-  script:
-    - dnf check-update
-    - dnf install -yqq firefox curl
-    - curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.2/install.sh | bash
-    - pwd
-    - export NVM_DIR="$HOME/.nvm"
-    - nvm install node
-    - npm install -g yarn
-    - cd web
-    - yarn install
-    - ng test --no-watch --no-progress --browsers=FirefoxHeadless
 
 build:sql:
   image: mcr.microsoft.com/mssql/server:2019-latest
