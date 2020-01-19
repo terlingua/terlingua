@@ -20,12 +20,12 @@ test:angular:
     - apt-get install -yqq firefox-esr curl
     - curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.2/install.sh | bash
     - pwd
-    - export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
-    - [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
+    - export NVM_DIR="$HOME/.nvm"
     - nvm install node
     - npm install -g yarn
+    - cd web
     - yarn install
-    - ng test --no-watch --no-progress --browsers=FirefoxHeadless
+    - yarn run ng test --no-watch --no-progress --browsers=FirefoxHeadless
 
 test:angularonfedora:
   image: fedora:latest
@@ -34,10 +34,10 @@ test:angularonfedora:
     - dnf install -yqq firefox curl
     - curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.2/install.sh | bash
     - pwd
-    - export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")" 
-    - [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+    - export NVM_DIR="$HOME/.nvm"
     - nvm install node
     - npm install -g yarn
+    - cd web
     - yarn install
     - ng test --no-watch --no-progress --browsers=FirefoxHeadless
 
