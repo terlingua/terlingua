@@ -1,0 +1,18 @@
+name: dotnet build
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        dotnet: [ '3.1.100' ]
+    name: Web API ${{ matrix.dotnet }}
+    steps:
+      - uses: actions/checkout@master
+      - name: Setup dotnet
+        uses: actions/setup-dotnet@v1
+        with:
+          dotnet-version: ${{ matrix.dotnet }}
+      - run: dotnet build
