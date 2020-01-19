@@ -17,7 +17,7 @@ test:angular:
   image: debian:stable
   script:
     - rm /bin/sh && ln -s /bin/bash /bin/sh
-    - apt-get update
+    - time apt-get update
     - apt-get install -y -q --no-install-recommends apt-transport-https
     - apt-get install -y -q --no-install-recommends build-essential
     - apt-get install -y -q --no-install-recommends ca-certificates
