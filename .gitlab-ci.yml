@@ -4,3 +4,11 @@ build:api:
     - dotnet --info
     - dotnet restore
     - dotnet build
+
+build:angular:
+  image: node:latest
+  script:
+    - pwd
+    - cd web
+    - yarn install
+    - yarn run ng build
