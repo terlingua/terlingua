@@ -21,7 +21,7 @@ test:angular:
     - curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.2/install.sh | bash
     - pwd
     - sh $HOME/.nvm/nvm.sh
-    - nvm install node
+    - sh $HOME/.nvm/nvm.sh install node
     - npm install -g yarn
     - cd web
     - yarn install
