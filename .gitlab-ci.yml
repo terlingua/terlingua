@@ -16,12 +16,22 @@ build:angular:
 test:angular:
   image: debian:stable
   script:
-    - apt-get update
-    - apt-get install -yqq firefox-esr curl
-    - curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.2/install.sh | bash
-    - pwd
-    - sh $HOME/.nvm/nvm.sh
-    - sh $HOME/.nvm/nvm.sh install node
+    - rm /bin/sh && ln -s /bin/bash /bin/sh
+    - apt-get update && apt-get install -y -q --no-install-recommends \
+        apt-transport-https \
+        build-essential \
+        ca-certificates \
+        curl \
+        git \
+        libssl-dev \
+        wget \
+        firefox-esr
+    - export NVM_DIR /usr/local/nvm
+    - curl https://raw.githubusercontent.com/creationix/nvm/master/install.sh | bash \
+        && . $NVM_DIR/nvm.sh \
+        && nvm install node
+    - node --version
+    - npm --version
     - npm install -g yarn
     - cd web
     - yarn install
