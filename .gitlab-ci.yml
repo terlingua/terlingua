@@ -26,7 +26,6 @@ test:angular13:
     - apt-get install -y -q --no-install-recommends libssl-dev
     - apt-get install -y -q --no-install-recommends wget
     - apt-get install -y -q --no-install-recommends firefox-esr
-    - export NVM_DIR ''
     - curl -sL https://deb.nodesource.com/setup_13.x | bash -
     - apt-get install -y nodejs
     - node --version
@@ -49,7 +48,6 @@ test:angular12:
     - apt-get install -y -q --no-install-recommends libssl-dev
     - apt-get install -y -q --no-install-recommends wget
     - apt-get install -y -q --no-install-recommends firefox-esr
-    - export NVM_DIR ''
     - curl -sL https://deb.nodesource.com/setup_12.x | bash -
     - apt-get install -y nodejs
     - node --version
@@ -72,7 +70,6 @@ test:angular10:
     - apt-get install -y -q --no-install-recommends libssl-dev
     - apt-get install -y -q --no-install-recommends wget
     - apt-get install -y -q --no-install-recommends firefox-esr
-    - export NVM_DIR ''
     - curl -sL https://deb.nodesource.com/setup_10.x | bash -
     - apt-get install -y nodejs
     - node --version
