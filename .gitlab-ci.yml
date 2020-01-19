@@ -20,4 +20,4 @@ build:sql:
     SA_PASSWORD: 9034725985
   script:
     - cd data/terlinguasql
-    - sqlcmd -e "hello, world"
+    - pwd
