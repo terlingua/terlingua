@@ -35,5 +35,13 @@ namespace API.Controllers
             })
             .ToArray();
         }
+        [HttpGet("all", Name = "GetAllItems")]
+        [ProducesResponseType(typeof(List<BL.ItemApiModel>), 200)]
+        [ProducesResponseType(204)]
+        [ProducesResponseType(404)]
+        public IEnumerable<BL.ItemApiModel> GetAllItems()
+        {
+            return new List<BL.ItemApiModel>();
+        }
     }
 }
